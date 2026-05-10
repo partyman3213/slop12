@@ -1,0 +1,263 @@
+/* ============================================================
+   PostBlitz – Guide Page  |  styleeAb.css
+   ============================================================ */
+
+:root {
+  --surface:      #ffffff;
+  --surface-2:    #f4f5f7;
+  --border:       rgba(0, 0, 0, 0.952);
+  --border-hover: rgba(0,0,0,.28);
+
+  --accent:       #4f46e5;
+  --accent-glow:  rgba(79,70,229,.2);
+  --accent-soft:  rgba(79,70,229,.08);
+
+  --text-primary:   #111318;
+  --text-secondary: #4b5263;
+  --text-muted:     #8b90a0;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+
+  --shadow-card:  0 1px 3px rgba(0,0,0,.07), 0 6px 20px rgba(0,0,0,.07);
+  --shadow-hover: 0 4px 8px rgba(0,0,0,.10), 0 16px 40px rgba(0,0,0,.10), 0 0 0 1px var(--border-hover);
+
+  --font-display: 'Inter', 'Poppins', sans-serif;
+  --font-body:    'Inter', 'Poppins', sans-serif;
+
+  --transition: .22s cubic-bezier(.4,0,.2,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: linear-gradient(180deg, rgba(150,202,218,1) 0%, rgba(247,247,235,1) 100%);
+  color: var(--text-primary);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 100%;
+  max-width: 930px;
+  margin-inline: auto;
+  padding-inline: 18px;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  background: rgba(244, 245, 246, 0.032);
+  backdrop-filter: blur(18px);
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 60px;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: -.5px;
+  user-select: none;
+}
+.logo .poste { color: #002253; font-style: normal; }
+.logo .blitz { color: #002253;       font-style: normal; }
+
+.nav-ul { display: flex; gap: 4px; list-style: none; }
+
+.nav-ul a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 19px;
+  font-weight: 500;
+  color: #002253;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: color var(--transition), background var(--transition), border-color var(--transition);
+}
+
+.nav-ul a:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.826);
+  border-color: var(--border);
+}
+.nav-ul a:hover::before { transform: translateX(-3px); }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.main > section:first-child {
+  padding: 80px 0 56px;
+  text-align: center;
+}
+
+.first-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.first-text h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: 1.15;
+  color: var(--text-primary);
+}
+
+.first-text h1::before {
+  content: 'How it works';
+  display: block;
+  font-size: .92rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color:#002253;
+  margin-bottom: 10px;
+}
+
+.first-lower-text {
+  max-width: 540px;
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+/* ============================================================
+   STEP CARDS
+   ============================================================ */
+.boxes { padding-bottom: 96px; }
+
+.boxes .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+.box {
+  position: relative;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 28px 24px;
+
+  /* 4-row internal grid so all zones align across cards:
+     row 1 – title   (auto)
+     row 2 – desc    (fixed 80px keeps images in same row)
+     row 3 – image   (auto)
+     row 4 – footer  (auto) */
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  gap: 14px;
+
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  animation: cardIn .5s ease both;
+}
+
+.box:nth-child(1) { animation-delay: .05s; }
+.box:nth-child(2) { animation-delay: .10s; }
+.box:nth-child(3) { animation-delay: .15s; }
+.box:nth-child(4) { animation-delay: .20s; }
+.box:nth-child(5) { animation-delay: .25s; }
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* ── title  (grid row 1) ── */
+.box h2 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+/* ── description  (grid row 2) ── */
+.box p {
+  font-size: .925rem;
+  font-weight: 450;
+  color: #000;
+  line-height: 1.65;
+  /* clamp overflow – text never pushes the image down */
+  overflow: hidden;
+  align-self: start;
+}
+
+/* ── image  (grid row 3) – always same vertical start ── */
+.box img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  object-fit: cover;
+  display: block;
+  align-self: start;
+  transition: border-color var(--transition);
+}
+
+
+/* ── footer note  (grid row 4) ── */
+.box footer {
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  font-size: .82rem;
+  color: #000
+}
+.box footer span {
+  color: red;
+  font-weight: 600;
+}
+
+/* cards without an image: collapse image row */
+.box:not(:has(img)) {
+  grid-template-rows: auto 80px auto;
+}
+
+/* last card accent tint */
+.box:last-child {
+  background: linear-gradient(135deg, var(--accent-soft) 0%, var(--surface) 100%);
+  border-color: rgb(2, 9, 3);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+
+@media (max-width: 800px) {
+  .main > section:first-child { padding: 52px 0 36px; }
+  .boxes .container { grid-template-columns: 1fr; }
+  .container { padding-inline: 18px; }
+  /* single column: no alignment constraint needed, let it flow */
+  .box,
+  .box:not(:has(img)) { grid-template-rows: auto auto auto auto; }
+}

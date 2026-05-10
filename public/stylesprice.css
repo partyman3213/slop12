@@ -1,0 +1,405 @@
+/* ============================================
+   PRICING DASHBOARD STYLES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:"Inter",'Poppins',"Roboto", sans-serif;
+    background: #ffffff;
+    color: #1a1a1a;
+    line-height: 1.6;
+    background: linear-gradient(0deg, rgba(247, 247, 235, 1) 0%, rgba(150, 202, 218, 1) 100%);
+}
+
+.pricing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px 20px;
+    padding-bottom: 60px;
+    padding-top: 60px;
+    
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(244, 245, 246, 0.032);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 60px;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: -.5px;
+  user-select: none;
+}
+.logo .poste { color: #002253; font-style: normal; }
+.logo .blitz { color: #002253;       font-style: normal; }
+
+.nav-ul { display: flex; gap: 4px; list-style: none; }
+
+.nav-ul a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 19px;
+  font-weight: 500;
+  color: #002253;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: color var(--transition), background var(--transition), border-color var(--transition);
+}
+
+.nav-ul a:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.826);
+  border-color: var(--border);
+}
+.nav-ul a:hover::before { transform: translateX(-3px); }
+
+/* ============================================
+   HEADER of pricing ?
+   ============================================ */
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.pricing-header h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #1a1a1a;
+}
+
+.pricing-header p {
+    font-size: 18px;
+    color: #002253;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   PRICING GRID
+   ============================================ */
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    margin-bottom: 80px;
+}
+
+/* ============================================
+   PRICING CARD
+   ============================================ */
+
+.pricing-card {
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: all 0.3s ease;
+    border: #000 solid 2px;
+}
+
+.pricing-card:hover {
+    border-color: #d0d0d0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+}
+
+.card-header {
+    margin-bottom: 24px;
+}
+
+.card-header h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+}
+
+.card-description {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ============================================
+   PRICING SECTION
+   ============================================ */
+
+.card-pricing {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.price {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.amount {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.period {
+    font-size: 14px;
+    color: #999;
+}
+
+.pricing-note {
+    font-size: 13px;
+    color: #999;
+}
+
+/* ============================================
+   CREDITS HIGHLIGHT
+   ============================================ */
+
+.card-credits {
+    margin-bottom: 24px;
+}
+
+.credits-highlight {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0066cc;
+    background: #f0f7ff;
+    padding: 12px 16px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* ============================================
+   FEATURES LIST
+   ============================================ */
+
+.card-features {
+    flex-grow: 1;
+    margin-bottom: 32px;
+}
+
+.features-intro {
+    font-size: 13px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.features-list {
+    list-style: none;
+}
+
+.features-list li {
+    font-size: 14px;
+    color: #555;
+    padding: 8px 0;
+    padding-left: 24px;
+    position: relative;
+}
+
+.features-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* ============================================
+   CARD FOOTER / BUTTONS
+   ============================================ */
+
+.card-footer {
+    margin-top: auto;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: #0066cc;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #78ade2;
+    transform: scale(1.02);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #0066cc;
+    border: 2px solid #0066cc;
+}
+
+.btn-secondary:hover {
+    background: #0066cc;
+    color: white;
+}
+
+/* ============================================
+   ADDITIONAL SECTIONS
+   ============================================ */
+
+.additional-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-top: 80px;
+}
+
+.info-card {
+    background: #f9f9f9;
+    padding: 32px;
+    border-radius: 12px;
+    border: 1px solid #e5e5e5;
+}
+
+.info-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #1a1a1a;
+}
+
+.info-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ============================================
+   FAQ STYLES
+   ============================================ */
+
+.faq details {
+    margin-bottom: 12px;
+}
+
+.faq summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: #1a1a1a;
+    padding: 12px;
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+.faq summary:hover {
+    background: #f5f5f5;
+    border-color: #d0d0d0;
+}
+
+.faq details[open] summary {
+    background: #f5f5f5;
+    border-color: #0066cc;
+}
+
+.faq details p {
+    margin: 12px 12px 0 12px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    .pricing-container {
+        padding: 40px 16px;
+    }
+
+    .pricing-header h1 {
+        font-size: 36px;
+    }
+
+    .pricing-header p {
+        font-size: 16px;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .additional-sections {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing-container {
+        padding: 30px 12px;
+    }
+
+    .pricing-header h1 {
+        font-size: 28px;
+    }
+
+    .pricing-header {
+        margin-bottom: 40px;
+    }
+
+    .card-header h2 {
+        font-size: 20px;
+    }
+
+    .amount {
+        font-size: 28px;
+    }
+
+    .period {
+        font-size: 12px;
+    }
+
+    .pricing-card {
+        padding: 24px;
+    }
+}
