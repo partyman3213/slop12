@@ -7,6 +7,11 @@ import { InferenceClient } from "@huggingface/inference";
 const router = express.Router();
 
 const hf = new InferenceClient(process.env.HF_TOKEN);
+const client = new InferenceClient({
+  apiKey: process.env.HF_TOKEN,
+  provider: "replicate"
+});
+
 
 const upload = multer({
     storage: multer.memoryStorage(),
@@ -78,6 +83,7 @@ try {
 
     const response = await hf.imageToImage({
       model: "black-forest-labs/FLUX.2-klein-4B",
+      provider: "replicate",
       inputs: inputBlob,
       parameters: {
       prompt: cleanPrompt,
