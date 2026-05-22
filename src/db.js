@@ -1,5 +1,16 @@
-import { DatabaseSync } from 'node:sqlite'
-const db = new DatabaseSync('./members.db')
+import { DatabaseSync } from 'node:sqlite';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+// 1. Sužinome, kur tiksliai sistemoje yra šis db.js failas
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// 2. Nurodome absoliutų kelią į members.db, kuris yra vienu aplanku aukščiau (pagrindiniame aplanke)
+const dbPath = path.resolve(__dirname, '../members.db');
+
+// 3. Atidarome bazę naudodami tikslų kelią
+const db = new DatabaseSync(dbPath);
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS users (
