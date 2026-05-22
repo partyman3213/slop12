@@ -7,10 +7,7 @@ import { InferenceClient } from "@huggingface/inference";
 const router = express.Router();
 
 const hf = new InferenceClient(process.env.HF_TOKEN);
-const client = new InferenceClient({
-  apiKey: process.env.HF_TOKEN,
-  provider: "replicate"
-});
+
 
 
 const upload = multer({
