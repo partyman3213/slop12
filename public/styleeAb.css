@@ -27,77 +27,7 @@ ul{
 
 /* Modal box*/
 
-.modal{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9997;
-    background-color: #1f2020e0;
-    box-sizing: border-box;
-    padding: 15px;
-    padding-right: 30px;
-    display: none;
-    
-}
-.modal__inner{
-    background-color: #fff;
-    width: 100%;
-    max-width: 800px;
-    overflow: hidden;
-    
-}
 
-.modal__top{
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    border: #000 solid 2px;
-    
-}
-
-.modal__title{
-    flex-grow: 1;
-    padding: 0 15px;
-    font-size: 20px;
-    
-}
-
-.modal__close{
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 15px;
-    background:#49c0f8;
-    border: none;
-    border-left: #000 solid 2px;
-    outline: none;
-    color: rgb(16, 15, 15);
-    font-weight: bold;
-    font-family:"Inter",'Poppins',"Roboto", sans-serif;
-}
-
-.modal__content {
-    padding: 15px;
-    line-height: 1.5;
-    border: #000 solid 2px;
-    border-top: none;
-    background-color: #fff;
-
-}
-
-.modal__bottom {
-    text-align: right;
-    cursor: pointer;
-    padding: 10px;
-    background:#fff;
-    border: solid 2px #000;
-    border-top: none
-}
 h1,
 h2 {
     margin-bottom: 15px;

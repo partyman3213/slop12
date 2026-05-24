@@ -225,16 +225,7 @@ header {
 
 
 /* ── footer note  (grid row 4) ── */
-.box footer {
-  padding-top: 10px;
-  border-top: 1px solid var(--border);
-  font-size: .82rem;
-  color: #000
-}
-.box footer span {
-  color: red;
-  font-weight: 600;
-}
+
 
 /* cards without an image: collapse image row */
 .box:not(:has(img)) {
@@ -243,8 +234,7 @@ header {
 
 /* last card accent tint */
 .box:last-child {
-  background: linear-gradient(135deg, var(--accent-soft) 0%, var(--surface) 100%);
-  border-color: rgb(2, 9, 3);
+  background: #ffffff;
 }
 
 

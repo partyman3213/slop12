@@ -43,89 +43,15 @@
     <main class="main">
 
 
-<!--
-        <div class="modal">
-            <div class="modal__inner">
-                <div class="modal__top">
-                    <div class="modal__title">
-                        <h3>Salect a theme</h3>
-                        <button class="modal__close"></button>
-                    </div>
-                    
-                </div>
 
-                <div class="modal__content">
-                 <div class="model_content_content">
-                    <div class="modal_image_container">
-                        <a onclick="myModalFunction1()"><img id="modal_img" src="images/obi.jpg" alt="theme"></a>
-                    </div>
-                    <p>Test</p>
-                 </div>
-
-                 <div class="model_content_content">
-                    <div class="modal_image_container">
-                        <a onclick="myModalFunction2()"><img id="modal_img" src="images/obi.jpg" alt="theme"></a>
-                    </div>
-                    <p>Test</p>
-                 </div>
-
-                 <div class="model_content_content">
-                    <div class="modal_image_container">
-                        <a onclick="myModalFunction3()"><img id="modal_img" src="images/obi.jpg" alt="theme"></a>
-                    </div>
-                    <p>Test</p>
-                 </div>
-
-                 <div class="model_content_content">
-                    <div class="modal_image_container">
-                        <a onclick="myModalFunction4()"><img id="modal_img" src="images/obi.jpg" alt="theme"></a>
-                    </div>
-                    <p>Test</p>
-                 </div>
-
-                 <div class="model_content_content">
-                    <div class="modal_image_container">
-                        <a onclick="myModalFunction5()"><img id="modal_img" src="images/obi.jpg" alt="theme"></a>
-                    </div>
-                    <p>Test</p>
-                 </div>
-
-                 <div class="model_content_content">
-                    <div class="modal_image_container">
-                        <a onclick="myModalFunction6()"><img id="modal_img" src="images/obi.jpg" alt="theme"></a>
-                    </div>
-                    <p>Test</p>
-                 </div>
-
-                 <div class="model_content_content">
-                    <div class="modal_image_container">
-                        <a onclick="myModalFunction7()"><img id="modal_img" src="images/obi.jpg" alt="theme"></a>
-                    </div>
-                    <p>Test</p>
-                 </div>
-
-                 <div class="model_content_content">
-                    <div class="modal_image_container">
-                        <a onclick="myModalFunction8()"><img id="modal_img" src="images/obi.jpg" alt="theme"></a>
-                    </div>
-                    <p>Test</p>
-                 </div>
-                </div>
-
-                <div class="modal__bottom">
-                    
-                
-                </div>
-            </div>
-        </div> -->
 
 
      <section>
         <div class="container">
             <div class="first-text">
-            <h1 id="target">Edit Photos <span id="Fasterr">Faster</span></h1>
+            <h1 id="target">Edit Photos <span id="Fasterr">Faster with AI</span></h1>
             <p class="first-lower-text">
-                Cost-effective online photo editor for simple tasks like object removal, text changes, and color adjustments  - <span id="Guide"><a href="/guide">Guide</a></span>
+                Remove Objects and Edit Text in Image  - <span id="Guide"><a href="/guide">Guide</a></span>
             </p>
             </div>
             
@@ -134,16 +60,11 @@
 
 
 
-     <section class="sec-clouds">
-        <div class="cloud-container">
-            <img src="images/cloudss.png" alt="cloud image">
-            <img src="images/cloudss.png" alt="cloud image">
-        </div>
-     </section>
+      </div>
      
      <section class="sec-gen">
-        <div class="container">
-            <!-- Credits -->
+
+          <!-- Credits -->
             <div  class="gen-head">
                 <div class="logo-wrapper">
                     <p class="logo-edit"> Guide </p>
@@ -153,15 +74,23 @@
                     </div>
                     
                 </div>
-            </div>
+         
+
+        <div class="container">
+           
                           <!-- Text area -->
             <div class="gen-main">
+                
                 <form action="#" class="prompt-form">
+                    
                     <div class="prompt-container">
+
+                        <button id="idktry" class="gen-mode" type="button"> <i>Upload</i></button>
+                        
                         <div class="addImageAndText-container">
                          <textarea id ="typeArea" class="prompt-input" placeholder="Write here"
                           required autofocus></textarea>
-                          <div class="addImage">
+                          <div class="addImage" id="addImageID">
                             <label for="addImageButton" class="custom-file-upload" id="labelPreview">
                                 <span id="plusText">+</span>
                                 <img id="imagePreview" src="" style="display: none;" />
@@ -171,7 +100,7 @@
                         </div>
 
                          <div class="buttonsC">
-                         <button id="idktry" class="gen-mode" type="button"> Upload</button>
+                         
                          <button type="submit" class="generate-btn">Generate</button>
                          </div>
                          
@@ -210,36 +139,7 @@
         </div>
      </section>
 
-     <!--<section class="boxes">
-        <div class="container">
-            <div class="box">
-                <h2>1. Write</h2>
-                <p>
-                    In the input box write however you
-                    wish yout Thumbnail to look like
-                </p>
-
-            </div>
-
-                <div class="box">
-                <h2>2. Generate</h2>
-                <p>
-                    After writing promt, press button "Generate" to generate
-                    2 images based on your input
-                </p>
-
-            </div>
-
-                <div class="box">
-                <h2>3. Download</h2>
-                <p>
-                    After generating, press "Download" button do download image.
-                    They should be 16:9 ratio.
-                </p>
-            </div>
-        </div>  
-              
-     </section> -->
+     
 
     </main>
 

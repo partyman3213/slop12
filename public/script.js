@@ -65,7 +65,7 @@ async function promptForm(e){
         generateBtn.disabled = true;
         generateBtn.innerText = "Loading...";
         imgCard.classList.add("loading");
-        galleryGrid.style.display = "block";
+        //galleryGrid.style.display = "block";
 
 
         const formData = new FormData();
