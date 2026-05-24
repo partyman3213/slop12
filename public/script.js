@@ -29,18 +29,70 @@ function picFiles(e){
       const base64Image = e.target.result;
       //localStorage.setItem('savedImage', base64Image);
         // Set the image source
-      imagePreview.src = e.target.result;
-      // Show the image
-      imagePreview.style.display = 'block';
-      // Hide the "+" text
-      plusText.style.display = 'none';
+    
+  // --- Get real image dimensions ---
+            const img = new Image();
+            img.onload = function() {
+                // Store dimensions on the input element to access later
+                document.getElementById('addImageButton').dataset.width = img.naturalWidth;
+                document.getElementById('addImageButton').dataset.height = img.naturalHeight;
+                console.log(`Image size: ${img.naturalWidth} x ${img.naturalHeight}`);
+            };
+            img.src = base64Image;
+
+      const uploadBtn = document.getElementById('idktry');
+     uploadBtn.style.backgroundImage = `url(${base64Image})`;
+     uploadBtn.style.backgroundSize = 'cover';
+     uploadBtn.style.backgroundPosition = 'center';
+     uploadBtn.style.color = 'transparent'; // hides "Upload" text
+    // removes dashed style
+     uploadBtn.style.backgroundSize = 'contain';
+     uploadBtn.style.backgroundRepeat = 'no-repeat';
+     uploadBtn.style.backgroundPosition = 'center';
     }
 
     reader.readAsDataURL(file);
   }
 }
 
+const dropArea = document.querySelector('.droparea');
 
+// Prevent browser from opening the file on drag
+['dragenter', 'dragover', 'dragleave', 'drop'].forEach(event => {
+    dropArea.addEventListener(event, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+    });
+});
+
+// Visual feedback
+['dragenter', 'dragover'].forEach(event => {
+    dropArea.addEventListener(event, () => {
+        dropArea.classList.add('drag-over');
+    });
+});
+
+['dragleave', 'drop'].forEach(event => {
+    dropArea.addEventListener(event, () => {
+        dropArea.classList.remove('drag-over');
+    });
+});
+
+// Handle the actual drop
+dropArea.addEventListener('drop', (e) => {
+    const file = e.dataTransfer.files[0];
+
+    if (!file || !file.type.startsWith('image/')) return;
+
+    // Inject the file into the existing input so picFiles works normally
+    const fileInput = document.getElementById('addImageButton');
+    const dataTransfer = new DataTransfer();
+    dataTransfer.items.add(file);
+    fileInput.files = dataTransfer.files;
+
+    // Reuse your existing function
+    picFiles.call(fileInput);
+});
 
 
 
@@ -73,6 +125,16 @@ async function promptForm(e){
 
        if (file) {
        formData.append("image", file);
+
+               // Pull the stored dimensions
+        const width = imageInput.dataset.width;
+        const height = imageInput.dataset.height;
+
+        if (width && height) {
+            formData.append("width", width);
+            formData.append("height", height);
+            console.log(`Sending size: ${width} x ${height}`);
+        }
        }
 
         // Sending to Back

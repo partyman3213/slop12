@@ -22,125 +22,7 @@ ul{
 
 
 
-/*form{
-    max-width: 100%;
-}*/
 
-/* Modal box
-
-.modal{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display:none;
-    
-    align-items:flex-start;
-    justify-content: center;
-    z-index: 9997;
-    background-color: #1f2020e0;
-    box-sizing: border-box;
-    padding: 15px;
-    overflow-y: auto
-    
-}
-.modal__inner{
-    background-color: #fff;
-    width: 100%;
-    max-width: 900px;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-top: 50px;
-}
-
-.modal__top{
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    
-    
-}
-
-.modal__title{
-    flex-grow: 1;
-    padding: 0 15px;
-    font-size: 20px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    justify-content: space-between;
-    color: #002253;
-}
-
-
-.modal__close{
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 14px;
-    margin: 5px;
-    width: 10px;
-    height: 10px;
-    justify-content: center;
-    background:#e94e16;
-    border: none;
-    border-radius: 50%;
-    outline: none;
-    color: rgb(244, 240, 240);
-    font-family:"Inter",'Poppins',"Roboto", sans-serif;
-    margin-right: 23px;
-}
-
-.modal__content {
-    line-height: 1.5;
-    border-top: #000 solid 1px;
-    background-color: #fff;
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    justify-content: center;
-    padding-top: 25px;
-    padding-right: 15px;
-    padding-left: 15px;
-
-}
-
-.model_content_content{
-    padding: 25px;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-   
-
-}
-.model_content_content p{ margin-top: 15px; margin-bottom: -15px;
-     margin-left: -140px; color: #000; font-weight: 500;}
-
-.modal_image_container{
-   width: 200px;
-   height: 200px;
-   border-radius: 10px;
-}
-#modal_img{
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
-    border-radius: 10px;
-}
-
-.modal__bottom {
-    text-align: right;
-    cursor: pointer;
-    padding: 10px;
-    background:#0c0c0c;
-    
-    border-top: none
-} */
 
 h1,
 h2 {
@@ -617,6 +499,12 @@ img{
     line-height: 35px;     
 }
 
+.droparea.drag-over .gen-mode {
+    background-color: #61676a2b;
+    border-color: #002253;
+    border-style: dashed;
+    transform: scale(0.98);
+}
 
 @media(max-width: 768px){
     .boxes .container {

@@ -59,7 +59,7 @@ try {
         }
 
         // Do your expensive operation (e.g., Image Generation )
-     const { prompt } = req.body;
+     const { prompt, width, height } = req.body;
 
     if (!prompt || typeof prompt !== 'string') {
     return res.status(400).json({ error: "Prompt is required" });
@@ -84,7 +84,7 @@ try {
       inputs: inputBlob,
       parameters: {
       prompt: cleanPrompt,
-       
+      aspect_ratio: "4:3",
       },
     });
 
